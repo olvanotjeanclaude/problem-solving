@@ -29,20 +29,25 @@ function calculateMaxArea(heightArray) {
 }
 
 function calculateMaxAreaOptimal(heightArray) {
+    let maxArea = heightArray[0];
+    let pL = 0;
+    let pR = heightArray.length - 1;
 
-    const indexLastEl = heightArray.length - 1;
-    const lastElement = heightArray[indexLastEl];
-
-    let maxArea = 0;
-
-    for (let i = 0; i < heightArray.length; i++) {
-        const area = Math.min(heightArray[i], lastElement) * (indexLastEl - i);
-        maxArea = Math.max(area, maxArea);
+    while (pL < pR) {
+        const area = Math.min(heightArray[pL], heightArray[pR]) * (pR - pL);
+        maxArea = Math.max(area, maxArea)
+        if (heightArray[pL] < heightArray[pR]) {
+            pL++;
+        }
+        else {
+            pR--;
+        }
     }
-    
+
     return maxArea;
 }
 
-const input = [4,8,28,2,3,15,9];
+const input = [4, 8, 28, 2, 3, 15, 9];
 
-const maxArea = calculateMaxAreaOptimal(input) //instead of 45 it gives 40;
+const maxArea = calculateMaxAreaOptimal(input);
+console.log(maxArea);
