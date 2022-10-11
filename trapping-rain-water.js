@@ -25,7 +25,7 @@ const getTrappedRainwater = function (heights) {
   return totalWater;
 }
 
-const optimal = function (heights) {
+const getTrappedRainwater2 = function (heights) {
   const maxLeft = [];
   const maxRight = [];
   const size = heights.length;
@@ -49,7 +49,7 @@ const optimal = function (heights) {
   return sumArea;
 }
 
-const optimal2 = function (heights) {
+const getTrappedRainwate3 = function (heights) {
   let pL = 0;
   let pR = heights.length - 1;
   let maxLeft = maxRight = 0;
