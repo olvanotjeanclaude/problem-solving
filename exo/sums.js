@@ -36,7 +36,7 @@ function sumOptimal(array, target) {
         }
     }
 
-    return null;
+    return  [];
 }
 
 const input = [2, 7, 11, 15];

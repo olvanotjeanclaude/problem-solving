@@ -23,6 +23,7 @@ const intToRoman = number => {
     return result;
 }
 
-const test1 = intToRoman(9);
+const test1 = intToRoman(1994);
 
 console.log(test1);
+
